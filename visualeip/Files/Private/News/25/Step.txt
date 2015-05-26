@@ -1,0 +1,19 @@
+1.首先下載Windows 7繁體中文語言包lp.cab
+
+以Administrator身分執行cmd.exe(新增cmd.exe捷徑,然後滑鼠右鍵選以管理員身分執行)
+輸入以下指令
+DISM /Online /Add-Package /PackagePath:(語言包路徑)
+
+例如我的語言包ip.cab在C:\download\,就打
+DISM /Online /Add-Package /PackagePath:C:\download\
+DISM /Online /Add-Package /PackagePath:C:\TEMP\
+
+
+然後輸入
+bcdedit /set {current} locale zh-tw
+
+再輸入
+bcdboot %WinDir% /l zh-tw
+
+執行regedit.exe,來修改機碼
+在HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\MUI\UILanguages 找到 en-us, 將之刪除
