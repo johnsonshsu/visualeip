@@ -16,7 +16,7 @@ namespace visualeip
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string str_name = "tony";
+            string strNo = "001";
         }
     }
 }
